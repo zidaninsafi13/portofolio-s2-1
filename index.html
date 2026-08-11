@@ -267,20 +267,20 @@
     <div class="reveal glass lift rounded-2xl p-8 lg:p-10">
       <div class="flex items-center justify-between mb-6">
         <div><div class="text-[10px] uppercase tracking-widest" style="color: var(--muted);" data-i18n="ref.s1l">Semester</div><div class="font-display text-2xl font-medium" data-i18n="ref.s1t">Semester I</div></div>
-        <div class="font-display text-3xl font-light" style="color: var(--accent);">05</div>
+        <div class="font-display text-3xl font-light" style="color: var(--accent);">06</div>
       </div>
       <p class="leading-relaxed" style="color: var(--fg-dim);" data-i18n="ref.s1d">Semester pertama adalah fase pelembutan fondasi. Saya belajar bahwa menjadi guru bukan sekadar menguasai materi, melainkan membangun kesadaran tentang siapa yang saya didik dan bagaimana saya mendidik mereka.</p>
     </div>
   </div>
 </section>
 
-<!-- MATA KULIAH (Langsung 5 Kartu, tanpa Tab) -->
+<!-- MATA KULIAH (Langsung 6 Kartu, tanpa Tab) -->
 <section id="matakuliah" class="relative py-28 lg:py-36 border-t" style="border-color: var(--border);">
   <div class="absolute top-1/3 -left-40 w-[500px] h-[500px] glow"></div>
   <div class="max-w-7xl mx-auto px-6 lg:px-10 relative">
     <div class="reveal mb-12 max-w-3xl">
       <div class="text-xs uppercase tracking-[0.3em] mb-5 deco-line" style="color: var(--accent);" data-i18n="mk.label">Refleksi per Mata Kuliah</div>
-      <h2 class="font-display font-light text-4xl md:text-5xl lg:text-6xl leading-tight"><span data-i18n="mk.t1">Lima mata kuliah, lima</span> <span class="italic font-semibold text-grad" data-i18n="mk.t2">pertumbuhan</span>.</h2>
+      <h2 class="font-display font-light text-4xl md:text-5xl lg:text-6xl leading-tight"><span data-i18n="mk.t1">Enam mata kuliah, enam</span> <span class="italic font-semibold text-grad" data-i18n="mk.t2">pertumbuhan</span>.</h2>
     </div>
     <div id="courseGrid" class="grid md:grid-cols-2 gap-6"></div>
   </div>
@@ -388,7 +388,7 @@
       "id.v2l": "Visi 02", "id.v2t": "Sebagai Calon Guru", "id.v2d": "Menjadi guru yang mendidik dengan kesadaran — memahami siapa yang diajar, mengapa materi diajarkan, dan bagaimana pembelajaran itu mempengaruhi cara siswa memandang dunia.",
       "ref.label": "Refleksi Belajar", "ref.t1": "Satu semester, satu benang merah:", "ref.t2": "menyadari", "ref.t3": "apa yang saya pelajari dan mengapa itu penting.",
       "ref.s1l": "Semester", "ref.s1t": "Semester I", "ref.s1d": "Semester pertama adalah fase pelembutan fondasi. Saya belajar bahwa menjadi guru bukan sekadar menguasai materi, melainkan membangun kesadaran tentang siapa yang saya didik dan bagaimana saya mendidik mereka.",
-      "mk.label": "Refleksi per Mata Kuliah", "mk.t1": "Lima mata kuliah, lima", "mk.t2": "pertumbuhan",
+      "mk.label": "Refleksi per Mata Kuliah", "mk.t1": "Enam mata kuliah, enam", "mk.t2": "pertumbuhan",
       "exp.label": "Pengalaman PPG", "exp.t1": "PPG bukan sekadar program — ia adalah", "exp.t2": "cermin", "exp.t3": "yang menunjukkan siapa saya sebagai guru.",
       "exp.r1t": "Refleksi Selama Program",
       "exp.r1d": "Selama mengikuti PPG Prajabatan, saya menemukan bahwa kesenjangan terbesar dalam diri saya bukanlah penguasaan materi, melainkan kemampuan untuk reflektif. PPG mengajarkan saya bahwa guru yang baik adalah guru yang terus-menerus mempertanyakan praktiknya sendiri.",
@@ -415,7 +415,7 @@
       "id.v2l": "Vision 02", "id.v2t": "As a Future Teacher", "id.v2d": "Becoming a teacher who educates with awareness — understanding who is being taught, why the material is taught, and how learning shapes the way students see the world.",
       "ref.label": "Learning Reflection", "ref.t1": "One semester, one common thread:", "ref.t2": "realizing", "ref.t3": "what I learned and why it matters.",
       "ref.s1l": "Semester", "ref.s1t": "Semester I", "ref.s1d": "The first semester was a phase of softening the foundation. I learned that being a teacher is not just about mastering content, but building awareness of who I educate and how I educate them.",
-      "mk.label": "Reflections per Course", "mk.t1": "Five courses, five", "mk.t2": "growth experiences",
+      "mk.label": "Reflections per Course", "mk.t1": "Six courses, six", "mk.t2": "growth experiences",
       "exp.label": "PPG Experience", "exp.t1": "PPG is not just a program — it is a", "exp.t2": "mirror", "exp.t3": "that shows who I am as a teacher.",
       "exp.r1t": "Reflection During the Program",
       "exp.r1d": "Throughout the Pre-Service Teacher Program, I discovered that my biggest gap was not content mastery, but the ability to be reflective. PPG taught me that a good teacher is one who constantly questions their own practice.",
@@ -434,7 +434,7 @@
     }
   };
 
-  // Hanya 5 Mata Kuliah (Satu Semester)
+  // 6 Mata Kuliah (Satu Semester)
   const courses = [
     { code:"MK-01", img:"assets/image/mk-1.png", tag:{id:"Semester 1", en:"Semester 1"}, n:{id:"Filosofi Pendidikan", en:"Educational Philosophy"}, pdf: "assets/document/mk-1.pdf", 
       short:{id:"Menyadarkan bahwa substansi pendidik bukan sekadar mentransfer pengetahuan, melainkan menuntun bertumbuhnya potensi bawaan peserta didik.", en:"Realizes that the essence of an educator is not merely transferring knowledge, but guiding the holistic growth of students' innate potential."},
@@ -469,7 +469,14 @@
       conn:{id:"PPL 1 merupakan wadah pengujian seluruh konsep teoretis ke dalam realitas persekolahan. Melalui pengalaman langsung di SDN 1 Setonopande, saya mengasah kemampuan manajemen kelas, penyusunan perangkat mengajar kontekstual, hingga interaksi pedagogis.", en:"PPL 1 is a testing ground for all theoretical concepts within school reality. Through direct experience at SDN 1 Setonopande, I honed my abilities in classroom management, developing contextual teaching tools, to pedagogical interaction."},
       chal:{id:"Di ruang kuliah, skenario mengajar tersusun ideal secara teoritis. Namun saat mengeksekusinya di sekolah, saya dituntut mengasah keluwesan dan kecepatan berpikir untuk beradaptasi dengan kondisi dinamika lapangan.", en:"In the lecture hall, teaching scenarios are ideally arranged theoretically. But when executing them in school, I was demanded to hone flexibility and speed of thought to adapt to field dynamics."},
       conc:{id:"Siklus pembelajaran terpadu (perancangan, pelaksanaan, evaluasi, dan refleksi berkelanjutan), pengondisian dinamika kelas, komunikasi efektif, serta kolaborasi dengan guru pamong dan dosen pembimbing.", en:"Integrated learning cycle (planning, execution, evaluation, and continuous reflection), classroom dynamics conditioning, effective communication, and collaboration with mentor teachers and supervisors."},
-      chan:{id:"Saya ingin membentuk identitas diri sebagai pendidik PJOK yang adaptif, komunikatif, dan reflektif. Setiap selesai sesi mengajar, saya akan mengevaluasi efektivitas metode yang digunakan serta konsisten meminta masukan.", en:"I want to form my identity as an adaptive, communicative, and reflective PJOK educator. After each teaching session, I will evaluate the effectiveness of the methods used and consistently ask for feedback."} }
+      chan:{id:"Saya ingin membentuk identitas diri sebagai pendidik PJOK yang adaptif, komunikatif, dan reflektif. Setiap selesai sesi mengajar, saya akan mengevaluasi efektivitas metode yang digunakan serta konsisten meminta masukan.", en:"I want to form my identity as an adaptive, communicative, and reflective PJOK educator. After each teaching session, I will evaluate the effectiveness of the methods used and consistently ask for feedback."} },
+
+    { code:"MK-06", img:"assets/image/mk-6.png", tag:{id:"Semester 1", en:"Semester 1"}, n:{id:"Pembelajaran Berdiferensiasi", en:"Differentiated Instruction"}, pdf: "assets/document/mk-6.pdf",
+      short:{id:"Pemahaman bahwa setiap siswa memiliki tingkat kesiapan, minat, dan profil belajar yang beraneka ragam sehingga membutuhkan strategi diferensiasi.", en:"Understanding that each student has diverse readiness levels, interests, and learning profiles, requiring differentiation strategies."},
+      conn:{id:"Mata kuliah ini memberikan pemahaman mendalam bahwa setiap siswa memiliki tingkat kesiapan (readiness), minat, dan profil belajar yang beraneka ragam. Praktik di SDN 1 Setonopande membuktikan bahwa dalam pelajaran PJOK, strategi diferensiasi sangat vital agar seluruh siswa dapat berpartisipasi aktif sesuai kapasitasnya tanpa merasa minder.", en:"This course provides a deep understanding that every student has diverse readiness, interests, and learning profiles. Practice at SDN 1 Setonopande proved that in PJOK, differentiation is vital so all students can participate actively without feeling inferior."},
+      chal:{id:"Dahulu saya beranggapan bahwa mengajar cukup dengan memberikan satu instruksi dan standar tugas yang sama untuk semua siswa. Lewat mata kuliah ini, saya memahami bahwa fleksibilitas pada aspek konten, proses, produk, dan lingkungan belajar adalah kunci utama keadilan dalam mengajar.", en:"I used to think teaching meant giving the same instruction and standards to everyone. Through this course, I learned that flexibility in content, process, product, and environment is the key to fairness in teaching."},
+      conc:{id:"Empat elemen diferensiasi (konten, proses, produk, lingkungan), 3 pemandu diferensiasi (kesiapan, minat, profil belajar), serta pemanfaatan Zone of Proximal Development (ZPD) untuk memberikan scaffolding gerak yang pas bagi tiap anak.", en:"Four differentiation elements (content, process, product, environment), 3 differentiation guides (readiness, interest, learning profile), and utilizing ZPD to provide appropriate movement scaffolding."},
+      chan:{id:"Dalam praktik PJOK di SDN 1 Setonopande, saya akan selalu menyiapkan variasi sarana dan tingkat kesulitan gerak (misalnya modifikasi ukuran bola, penyesuaian jarak target, atau pilihan unjuk kemampuan) agar seluruh siswa terlibat tanpa ada yang tertinggal.", en:"In PJOK practice, I will always prepare variations of equipment and movement difficulty (e.g., modifying ball size, adjusting target distance) so all students are involved."} }
   ];
 
   let currentLang = 'id';
@@ -501,7 +508,6 @@
     const modal = document.getElementById('modal');
     document.getElementById('modalContent').innerHTML = `
       <div class="grid grid-cols-1 md:grid-cols-2 gap-0">
-        <!-- Left Side: Text Content -->
         <div class="p-6 sm:p-8 md:p-10 flex flex-col justify-center">
           <div class="flex items-center gap-3 mb-6">
             <span class="px-3 py-1 rounded-full text-[10px] font-semibold" style="background: var(--accent-soft); color: var(--accent); border: 1px solid rgba(var(--rgb),0.3);">${c.tag[currentLang]}</span>
@@ -542,7 +548,6 @@
           </div>
         </div>
         
-        <!-- Right Side: PDF Preview -->
         <div class="flex flex-col h-[60vh] md:h-auto md:min-h-[500px] border-t md:border-t-0 md:border-l" style="border-color: var(--border); background: var(--bg-3);">
           <div class="flex items-center justify-between px-4 py-3 border-b" style="border-color: var(--border);">
             <div class="flex items-center gap-2 text-xs font-mono uppercase tracking-widest" style="color: var(--muted);">
@@ -627,11 +632,14 @@
     if (e.target.id === 'modal') closeModal();
   });
 
-  window.addEventListener('load', () => {
+  // PERBAIKAN LOADING: 
+  // Menggunakan DOMContentLoaded agar tidak menunggu gambar besar/gambar dari link eksternal selesai dimuat.
+  // Waktu delay preloader dipangkas menjadi 800ms.
+  document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
       document.getElementById('preloader').classList.add('hidden');
       document.body.classList.add('loaded');
-    }, 2000);
+    }, 800);
   });
 
   renderCourses();

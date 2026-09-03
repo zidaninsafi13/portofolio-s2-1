@@ -22,14 +22,9 @@ export interface IdentityCard {
   tone: "accent" | "gold";
 }
 
-export interface SemesterSummary {
+export interface LearningParagraph {
   label: string;
-  title: string;
-  count: string;
-  countLabel: string;
-  description: string;
-  status: string;
-  available: boolean;
+  text: string;
 }
 
 export interface TimelineItem {
@@ -82,7 +77,7 @@ export interface SiteContent {
     eyebrow: string;
     heading: HeadingParts;
     intro: string;
-    semesters: SemesterSummary[];
+    paragraphs: LearningParagraph[];
   };
   courses: {
     eyebrow: string;

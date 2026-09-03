@@ -76,27 +76,23 @@ export const siteContent: Record<Locale, SiteContent> = {
         trailing: "apa yang saya pelajari dan mengapa itu penting.",
       },
       intro:
-        "Perjalanan PPG saya dibangun sebagai rangkaian refleksi. Setiap semester menjadi ruang untuk menghubungkan teori, pengalaman lapangan, dan perubahan praktik mengajar.",
-      semesters: [
+        "Perjalanan selama dua semester PPG menjadi proses bagi saya untuk memahami bahwa kemampuan mengajar tidak hanya dibentuk melalui pemahaman teori, tetapi terutama melalui pengalaman ketika berhadapan langsung dengan peserta didik. Setiap kegiatan perkuliahan, observasi, perencanaan pembelajaran, praktik mengajar, asesmen, hingga refleksi setelah pembelajaran membantu saya melihat kembali kekuatan dan kekurangan dalam praktik saya sebagai calon guru PJOK.",
+      paragraphs: [
         {
-          label: "Semester",
-          title: "Semester I",
-          count: "06",
-          countLabel: "mata kuliah",
-          description:
-            "Semester pertama adalah fase peletakan fondasi. Saya belajar bahwa menjadi guru bukan sekadar menguasai materi, melainkan membangun kesadaran tentang siapa yang saya didik dan bagaimana saya mendidik mereka.",
-          status: "Dokumentasi tersedia",
-          available: true,
+          label: "Semester I · Fondasi",
+          text: "Pada semester pertama, saya mulai membangun fondasi sebagai seorang pendidik. Pengalaman praktik mengajar membuat saya menyadari bahwa pembelajaran yang telah dirancang dengan baik belum tentu berjalan sesuai rencana ketika diterapkan di kelas. Perbedaan kemampuan peserta didik, keterbatasan sarana, pengelolaan kelas, serta respons peserta didik terhadap aktivitas pembelajaran menuntut saya untuk lebih adaptif. Saya mulai belajar memodifikasi aktivitas, menggunakan alat yang tersedia secara kreatif, memberikan instruksi yang lebih sederhana, dan menempatkan kebutuhan peserta didik sebagai dasar dalam mengambil keputusan selama pembelajaran.",
         },
         {
-          label: "Semester",
-          title: "Semester II",
-          count: "06",
-          countLabel: "mata kuliah",
-          description:
-            "Semester kedua memperdalam kemampuan saya mengelola aspek sosial emosional, asesmen, praktik lapangan, kepemimpinan, pemecahan masalah, dan komunikasi profesional sebagai calon guru PJOK.",
-          status: "Dokumentasi tersedia",
-          available: true,
+          label: "Semester II · Pendalaman",
+          text: "Pada semester kedua, proses refleksi tersebut menjadi lebih mendalam. Saya tidak lagi hanya bertanya apakah materi telah selesai diajarkan, tetapi mulai mempertanyakan apakah peserta didik benar-benar terlibat, memahami tujuan aktivitas, merasa aman dalam mengikuti pembelajaran, serta memperoleh kesempatan belajar yang sesuai dengan kemampuannya. Pembelajaran sosial emosional, asesmen, praktik pengalaman lapangan, kepemimpinan, computational thinking, dan kegiatan seminar memperkuat kemampuan saya dalam merancang pembelajaran secara lebih terstruktur sekaligus reflektif.",
+        },
+        {
+          label: "Makna bagi praktik",
+          text: "Dari pengalaman praktik mengajar tersebut, saya memahami bahwa menjadi guru PJOK bukan sekadar mampu menjelaskan dan mendemonstrasikan gerakan. Guru perlu mampu membaca situasi kelas, membangun interaksi positif, menyesuaikan aktivitas dengan kondisi peserta didik, serta menggunakan asesmen untuk memperbaiki pembelajaran berikutnya. Kesalahan maupun kegiatan yang belum berjalan optimal selama praktik tidak lagi saya lihat sebagai kegagalan, tetapi sebagai bahan evaluasi untuk menentukan perubahan yang perlu dilakukan.",
+        },
+        {
+          label: "Benang merah",
+          text: "Dua semester PPG akhirnya membentuk satu benang merah bagi perkembangan saya: mengajar adalah proses belajar yang terus berlangsung bagi guru maupun peserta didik. Saya ingin membawa kebiasaan reflektif ini dalam perjalanan profesional saya, sehingga setiap pengalaman mengajar tidak berhenti sebagai kegiatan rutin, tetapi menjadi dasar untuk merancang pembelajaran PJOK yang lebih aktif, bermakna, inklusif, dan berpihak pada peserta didik.",
         },
       ],
     },
@@ -293,27 +289,23 @@ export const siteContent: Record<Locale, SiteContent> = {
         trailing: "what I learned and why it matters.",
       },
       intro:
-        "My PPG journey is structured as a sequence of reflections. Each semester connects theory, field experience, and meaningful changes in teaching practice.",
-      semesters: [
+        "My two-semester journey through the Pre-Service Teacher Program became a process of understanding that teaching ability is shaped not only by theoretical understanding, but above all by direct experience with students. Every lecture, observation, learning design, teaching practice, assessment, and post-lesson reflection helped me re-examine the strengths and weaknesses of my practice as a prospective physical-education teacher.",
+      paragraphs: [
         {
-          label: "Semester",
-          title: "Semester I",
-          count: "06",
-          countLabel: "courses",
-          description:
-            "The first semester established the foundation. I learned that becoming a teacher is not only about mastering content, but also understanding who I teach and how I support their growth.",
-          status: "Documentation available",
-          available: true,
+          label: "Semester I · Foundation",
+          text: "In the first semester, I began building my foundation as an educator. Teaching practice made me realise that a well-designed lesson does not always go as planned in the classroom. Differences in students' abilities, limited facilities, classroom management, and students' responses to learning activities demanded adaptability. I began learning to modify activities, use available tools creatively, give simpler instructions, and place students' needs at the centre of every decision during the lesson.",
         },
         {
-          label: "Semester",
-          title: "Semester II",
-          count: "06",
-          countLabel: "courses",
-          description:
-            "The second semester deepened my ability to address social-emotional learning, assessment, field practice, leadership, problem-solving, and professional communication as a prospective physical-education teacher.",
-          status: "Documentation available",
-          available: true,
+          label: "Semester II · Deepening",
+          text: "In the second semester, this reflective process deepened. I no longer only asked whether the material had been delivered, but began questioning whether students were genuinely engaged, understood the purpose of each activity, felt safe while participating, and received learning opportunities suited to their abilities. Social-emotional learning, assessment, field practice, leadership, computational thinking, and the seminar strengthened my ability to design learning that is more structured and reflective.",
+        },
+        {
+          label: "Meaning for practice",
+          text: "From those teaching experiences, I came to understand that being a physical-education teacher is not merely about explaining and demonstrating movement. A teacher needs to read the classroom, build positive interactions, adjust activities to students' conditions, and use assessment to improve the next lesson. Mistakes and imperfect moments during practice are no longer failures to me, but evaluation material for deciding what to change.",
+        },
+        {
+          label: "Common thread",
+          text: "Two semesters of PPG ultimately formed one common thread in my growth: teaching is an ongoing learning process for both the teacher and the students. I want to carry this reflective habit into my professional journey, so that every teaching experience does not end as a routine activity, but becomes the basis for designing physical-education learning that is more active, meaningful, inclusive, and centred on students.",
         },
       ],
     },

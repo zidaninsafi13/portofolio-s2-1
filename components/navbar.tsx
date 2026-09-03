@@ -6,6 +6,7 @@ import { Menu, Moon, Sun, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { usePortfolio } from "@/components/providers/portfolio-provider";
 import type { Locale } from "@/lib/portfolio-types";
+import { assetPath } from "@/lib/asset-path";
 
 export function Navbar() {
   const { content, introComplete, locale, setLocale, theme, toggleTheme } = usePortfolio();
@@ -76,7 +77,7 @@ export function Navbar() {
           >
             <span className="relative size-10 shrink-0 overflow-hidden border border-border-strong bg-white/95 p-1.5 sm:size-11">
               <Image
-                src="/assets/image/logo-kampus.png"
+                src={assetPath("/assets/image/logo-kampus.png")}
                 alt=""
                 fill
                 priority

@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion, useReducedMotion } from "motion/react";
 import { ArrowDown, ArrowDownRight, Cpu, Layers3, Lightbulb } from "lucide-react";
 import { usePortfolio } from "@/components/providers/portfolio-provider";
+import { assetPath } from "@/lib/asset-path";
 
 export function Hero() {
   const { content, introComplete } = usePortfolio();
@@ -100,7 +101,7 @@ export function Hero() {
 
             <div className="group relative aspect-[4/5] overflow-hidden border border-border-strong bg-document">
               <Image
-                src="/assets/image/profile.jpeg"
+                src={assetPath("/assets/image/profile.jpeg")}
                 alt="Zidan Insafi"
                 fill
                 priority

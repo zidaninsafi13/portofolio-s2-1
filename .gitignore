@@ -1,0 +1,30 @@
+# dependencies
+/node_modules
+/digital-museum/node_modules
+
+# Next.js
+/.next
+/digital-museum/.next
+/out
+
+# production
+/build
+
+# local tooling
+.playwright-cli/
+*.tsbuildinfo
+
+# environment files
+.env*
+!.env.example
+
+# operating system
+.DS_Store
+Thumbs.db
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+assets/document/mk-1.pdf

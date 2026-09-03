@@ -1,0 +1,14 @@
+const basePath =
+  process.env.NODE_ENV === "production"
+    ? "/portofolio-s2-1"
+    : "";
+
+export function assetPath(path?: string) {
+  if (!path) return "";
+
+  const normalizedPath = path.startsWith("/")
+    ? path
+    : `/${path}`;
+
+  return `${basePath}${normalizedPath}`;
+}

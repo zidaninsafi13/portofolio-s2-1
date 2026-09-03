@@ -2,9 +2,17 @@
 
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { ExternalLink, FileText, X } from "lucide-react";
-import { useEffect, useId, useRef, useSyncExternalStore, type RefObject } from "react";
+import {
+  useEffect,
+  useId,
+  useRef,
+  useSyncExternalStore,
+  type RefObject,
+} from "react";
 import { createPortal } from "react-dom";
+
 import { usePortfolio } from "@/components/providers/portfolio-provider";
+import { assetPath } from "@/lib/asset-path";
 import type { Course } from "@/lib/portfolio-types";
 
 interface ReflectionModalProps {
@@ -13,17 +21,25 @@ interface ReflectionModalProps {
   onClose: () => void;
 }
 
-export function ReflectionModal({ course, returnFocusRef, onClose }: ReflectionModalProps) {
+export function ReflectionModal({
+  course,
+  returnFocusRef,
+  onClose,
+}: ReflectionModalProps) {
   const { content, locale } = usePortfolio();
+
   const mounted = useSyncExternalStore(
     () => () => undefined,
     () => true,
     () => false,
   );
+
   const panelRef = useRef<HTMLDivElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
+
   const titleId = useId();
   const descriptionId = useId();
+
   const reduceMotion = useReducedMotion();
 
   useEffect(() => {
@@ -32,9 +48,13 @@ export function ReflectionModal({ course, returnFocusRef, onClose }: ReflectionM
     const shell = document.getElementById("site-shell");
     const returnFocusTarget = returnFocusRef.current;
     const previousOverflow = document.body.style.overflow;
+
     shell?.setAttribute("inert", "");
     document.body.style.overflow = "hidden";
-    window.requestAnimationFrame(() => closeRef.current?.focus());
+
+    window.requestAnimationFrame(() => {
+      closeRef.current?.focus();
+    });
 
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
@@ -44,14 +64,18 @@ export function ReflectionModal({ course, returnFocusRef, onClose }: ReflectionM
       }
 
       if (event.key !== "Tab" || !panelRef.current) return;
+
       const focusable = Array.from(
         panelRef.current.querySelectorAll<HTMLElement>(
           'a[href], button:not([disabled]), iframe, [tabindex]:not([tabindex="-1"])',
         ),
       );
+
       if (focusable.length === 0) return;
+
       const first = focusable[0];
       const last = focusable[focusable.length - 1];
+
       if (event.shiftKey && document.activeElement === first) {
         event.preventDefault();
         last.focus();
@@ -62,11 +86,17 @@ export function ReflectionModal({ course, returnFocusRef, onClose }: ReflectionM
     };
 
     document.addEventListener("keydown", handleKeyDown);
+
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
+
       shell?.removeAttribute("inert");
+
       document.body.style.overflow = previousOverflow;
-      window.requestAnimationFrame(() => returnFocusTarget?.focus());
+
+      window.requestAnimationFrame(() => {
+        returnFocusTarget?.focus();
+      });
     };
   }, [course, onClose, returnFocusRef]);
 
@@ -82,7 +112,9 @@ export function ReflectionModal({ course, returnFocusRef, onClose }: ReflectionM
           exit={{ opacity: 0 }}
           transition={{ duration: reduceMotion ? 0 : 0.24 }}
           onMouseDown={(event) => {
-            if (event.target === event.currentTarget) onClose();
+            if (event.target === event.currentTarget) {
+              onClose();
+            }
           }}
         >
           <motion.div
@@ -91,10 +123,29 @@ export function ReflectionModal({ course, returnFocusRef, onClose }: ReflectionM
             aria-modal="true"
             aria-labelledby={titleId}
             aria-describedby={descriptionId}
-            initial={reduceMotion ? false : { opacity: 0, y: 28, scale: 0.975 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 16, scale: 0.985 }}
-            transition={{ duration: reduceMotion ? 0 : 0.42, ease: [0.16, 1, 0.3, 1] }}
+            initial={
+              reduceMotion
+                ? false
+                : {
+                    opacity: 0,
+                    y: 28,
+                    scale: 0.975,
+                  }
+            }
+            animate={{
+              opacity: 1,
+              y: 0,
+              scale: 1,
+            }}
+            exit={{
+              opacity: 0,
+              y: 16,
+              scale: 0.985,
+            }}
+            transition={{
+              duration: reduceMotion ? 0 : 0.42,
+              ease: [0.16, 1, 0.3, 1],
+            }}
             className="playbook-panel relative my-auto grid max-h-[94svh] w-full max-w-7xl overflow-hidden bg-surface shadow-[0_40px_120px_rgba(0,0,0,0.45)] lg:grid-cols-[minmax(0,0.9fr)_minmax(30rem,1.1fr)]"
           >
             <button
@@ -109,22 +160,49 @@ export function ReflectionModal({ course, returnFocusRef, onClose }: ReflectionM
 
             <div className="max-h-[94svh] overflow-y-auto p-6 pb-9 pt-16 sm:p-9 sm:pt-16 lg:p-11 lg:pt-14">
               <div className="flex items-center gap-3">
-                <span className="border border-accent/35 bg-accent-soft px-3 py-1.5 font-mono text-[0.6rem] font-semibold uppercase tracking-[0.1em] text-accent">{course.tag[locale]}</span>
-                <span className="font-mono text-[0.65rem] text-muted">{course.code}</span>
+                <span className="border border-accent/35 bg-accent-soft px-3 py-1.5 font-mono text-[0.6rem] font-semibold uppercase tracking-[0.1em] text-accent">
+                  {course.tag[locale]}
+                </span>
+
+                <span className="font-mono text-[0.65rem] text-muted">
+                  {course.code}
+                </span>
               </div>
-              <h2 id={titleId} className="mt-6 max-w-xl font-sans text-3xl font-extrabold uppercase leading-[0.98] tracking-[-0.045em] text-foreground sm:text-4xl">{course.name[locale]}</h2>
-              <p id={descriptionId} className="mt-5 text-sm leading-7 text-muted sm:text-base">{course.summary[locale]}</p>
+
+              <h2
+                id={titleId}
+                className="mt-6 max-w-xl font-sans text-3xl font-extrabold uppercase leading-[0.98] tracking-[-0.045em] text-foreground sm:text-4xl"
+              >
+                {course.name[locale]}
+              </h2>
+
+              <p
+                id={descriptionId}
+                className="mt-5 text-sm leading-7 text-muted sm:text-base"
+              >
+                {course.summary[locale]}
+              </p>
 
               <div className="mt-9 space-y-6">
-                {([
-                  ["connection", content.modal.connection, "accent"],
-                  ["challenge", content.modal.challenge, "gold"],
-                  ["concept", content.modal.concept, "violet"],
-                  ["change", content.modal.change, "green"],
-                ] as const).map(([key, label, tone]) => (
-                  <section key={key} className={`reflection-item reflection-${tone}`}>
-                    <h3 className="text-[0.7rem] font-bold uppercase tracking-[0.14em]">{label}</h3>
-                    <p className="mt-2 text-sm leading-7 text-muted">{course.reflection[key][locale]}</p>
+                {(
+                  [
+                    ["connection", content.modal.connection, "accent"],
+                    ["challenge", content.modal.challenge, "gold"],
+                    ["concept", content.modal.concept, "violet"],
+                    ["change", content.modal.change, "green"],
+                  ] as const
+                ).map(([key, label, tone]) => (
+                  <section
+                    key={key}
+                    className={`reflection-item reflection-${tone}`}
+                  >
+                    <h3 className="text-[0.7rem] font-bold uppercase tracking-[0.14em]">
+                      {label}
+                    </h3>
+
+                    <p className="mt-2 text-sm leading-7 text-muted">
+                      {course.reflection[key][locale]}
+                    </p>
                   </section>
                 ))}
               </div>
@@ -133,24 +211,32 @@ export function ReflectionModal({ course, returnFocusRef, onClose }: ReflectionM
             <div className="flex min-h-[30rem] flex-col border-t border-border bg-document lg:max-h-[94svh] lg:border-l lg:border-t-0">
               <div className="flex min-h-16 items-center justify-between gap-3 border-b border-border py-3 pl-4 pr-20 sm:pl-6">
                 <p className="flex items-center gap-2 font-mono text-[0.62rem] uppercase tracking-[0.16em] text-muted">
-                  <FileText size={15} className="text-accent" aria-hidden="true" />
+                  <FileText
+                    size={15}
+                    className="text-accent"
+                    aria-hidden="true"
+                  />
+
                   {content.modal.artifactPreview}
                 </p>
+
                 {course.pdf ? (
                   <a
-                    href={course.pdf}
+                    href={assetPath(course.pdf)}
                     target="_blank"
                     rel="noreferrer"
                     className="focus-ring inline-flex items-center gap-2 border border-accent/35 bg-accent-soft px-3 py-2 font-mono text-[0.6rem] font-semibold uppercase tracking-[0.08em] text-accent transition-colors hover:border-accent"
                   >
                     <ExternalLink size={13} aria-hidden="true" />
+
                     {content.modal.openPdf}
                   </a>
                 ) : null}
               </div>
+
               {course.pdf ? (
                 <iframe
-                  src={`${course.pdf}#toolbar=1&navpanes=0`}
+                  src={`${assetPath(course.pdf)}#toolbar=1&navpanes=0`}
                   title={`${content.modal.artifactPreview}: ${course.name[locale]}`}
                   loading="lazy"
                   className="min-h-[32rem] flex-1 bg-white"
@@ -161,8 +247,14 @@ export function ReflectionModal({ course, returnFocusRef, onClose }: ReflectionM
                     <span className="mx-auto grid size-16 place-items-center border border-accent/35 bg-accent-soft text-accent">
                       <FileText size={27} aria-hidden="true" />
                     </span>
-                    <h3 className="mt-6 font-sans text-2xl font-extrabold uppercase tracking-[-0.04em] text-foreground">{content.modal.artifactUnavailable}</h3>
-                    <p className="mt-3 text-sm leading-7 text-muted">{content.modal.artifactUnavailableHint}</p>
+
+                    <h3 className="mt-6 font-sans text-2xl font-extrabold uppercase tracking-[-0.04em] text-foreground">
+                      {content.modal.artifactUnavailable}
+                    </h3>
+
+                    <p className="mt-3 text-sm leading-7 text-muted">
+                      {content.modal.artifactUnavailableHint}
+                    </p>
                   </div>
                 </div>
               )}

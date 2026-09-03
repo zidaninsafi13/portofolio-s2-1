@@ -5,7 +5,6 @@ import { motion, useReducedMotion } from "motion/react";
 import { ArrowDown, ArrowDownRight, Cpu, Layers3, Lightbulb } from "lucide-react";
 import { usePortfolio } from "@/components/providers/portfolio-provider";
 import { assetPath } from "@/lib/asset-path";
-
 export function Hero() {
   const { content, introComplete } = usePortfolio();
   const reduceMotion = useReducedMotion();

@@ -4,6 +4,7 @@ import Image from "next/image";
 import { ArrowUp } from "lucide-react";
 import { usePortfolio } from "@/components/providers/portfolio-provider";
 import { MotionSection } from "@/components/ui/motion-section";
+import { assetPath } from "@/lib/asset-path";
 
 export function Footer() {
   const { content } = usePortfolio();
@@ -26,7 +27,7 @@ export function Footer() {
         <div className="mt-16 flex flex-col gap-6 border-t border-border pt-7 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-3">
             <span className="relative size-9 overflow-hidden border border-border bg-white p-1">
-              <Image src="/assets/image/logo-kampus.png" alt="" fill sizes="36px" className="object-contain p-1" />
+              <Image src={assetPath("/assets/image/logo-kampus.png")} alt="" fill sizes="36px" className="object-contain p-1" />
             </span>
             <p className="text-xs text-muted">{content.footer.closing}</p>
           </div>
